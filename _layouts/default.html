@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+<style>
+  body { max-width: 38rem; margin: 2rem auto; padding: 0 1rem;
+         font: 16px/1.6 ui-monospace, Menlo, monospace; color: #222; background: #fff; }
+  a { color: inherit; }
+  header, footer { margin: 1rem 0 2rem; }
+  footer { margin-top: 3rem; color: #777; }
+  ul.posts { list-style: none; padding: 0; }
+  .date { color: #777; }
+  pre { overflow-x: auto; }
+  img { max-width: 100%; height: auto; }
+  @media (prefers-color-scheme: dark) { body { color: #ddd; background: #111; } }
+</style>
+</head>
+<body>
+<header><a href="{{ '/' | relative_url }}">{{ site.title }}</a></header>
+<main>
+{{ content }}
+</main>
+<footer>{{ site.description }}</footer>
+</body>
+</html>
