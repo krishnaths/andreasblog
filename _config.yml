@@ -3,3 +3,4 @@ description: A plain text blog.
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
 exclude: [README.md, Gemfile, Gemfile.lock]
+baseurl: /andreasblog
