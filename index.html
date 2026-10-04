@@ -1,8 +1,118 @@
----
-layout: default
----
-<ul class="posts">
-{% for post in site.posts %}
-  <li><span class="date">{{ post.date | date: "%Y-%m-%d" }}</span> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coming soon · andreasblog</title>
+  <meta name="description" content="A blog about my life in Colombia is coming soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf6ee;
+      --ink: #1f2a44;
+      --muted: #6b6f7a;
+      --yellow: #f6c33b;
+      --blue: #1f4e9c;
+      --red: #c8322f;
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 48px 16px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", system-ui, sans-serif;
+      text-align: center;
+    }
+
+    main {
+      max-width: 440px;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+
+    .photo {
+      width: min(300px, 78vw);
+      aspect-ratio: 3 / 4;
+      margin: 0 auto 36px;
+      border-radius: 999px 999px 18px 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 50px -20px rgba(31, 42, 68, 0.45);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 55% 40%;
+      display: block;
+    }
+
+    .flag {
+      display: flex;
+      width: 56px;
+      height: 6px;
+      margin: 0 auto 22px;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .flag span:nth-child(1) { flex: 2; background: var(--yellow); }
+    .flag span:nth-child(2) { flex: 1; background: var(--blue); }
+    .flag span:nth-child(3) { flex: 1; background: var(--red); }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(34px, 8vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+    }
+
+    h1 em {
+      font-weight: 400;
+      color: var(--blue);
+    }
+
+    p {
+      margin-top: 18px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      main { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="photo">
+      <img src="andreas.jpeg" alt="Standing on a cobblestone street lined with colorful balconies in Colombia">
+    </div>
+    <div class="flag" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="eyebrow">Coming soon</div>
+    <h1>My life in <em>Colombia</em></h1>
+    <p>A blog about the people, the life, the coffee and everything in between. Stories are on their way.</p>
+  </main>
+</body>
+</html>
